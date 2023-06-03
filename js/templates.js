@@ -5,7 +5,7 @@ function getExamStart() {
 }
 
 function getExamRowTemplate() {
-  return '<div class="form-group"><label for="answer_{0}">{1} * {2} = </label><input inputmode="numeric" pattern="[0-9]*" type="text" class="inputField" id="answer_{0}" name="answer_{0}" /><span id="resultOk_{0}"></span></div>';
+  return '<div class="form-group"><label for="answer_{0}">{1} * {2} = </label><input inputmode="numeric" pattern="[0-9]*" type="number" class="inputField" id="answer_{0}" name="answer_{0}" /><span id="resultOk_{0}"></span></div>';
 }
 
 function getExamEnd() {
@@ -25,16 +25,11 @@ function getFeedback(correctCount) {
 }
 
 function getResultHistory(results) {
-  console.log('getResultHistory - results:');
-  console.log(results);
   var tableString = '<table class="table"><thead><tr><th>Aika</th><th>Tulos</th></tr></thead><tbody>';
   for (var i = 0; i < results.length; i++) {
     var result = results[i];
     tableString += '<tr><td>' + result.date + '</td><td>' + result.result + '</td></tr>';
   }
   tableString += '</tbody></table>';
-  console.log(tableString);
   return tableString;
-  // results.forEach(result => tableString += '<tr><td>' + result.date + '</td><td>' + result.result + '</td></tr>);
-
 }

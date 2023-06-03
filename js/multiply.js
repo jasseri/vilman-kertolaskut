@@ -76,7 +76,6 @@ function initQuestions() {
 }
 
 function submitExam(event) {
-  console.log('Submitted');
   stopCountdown();
   $('#submitButton').hide();
   $('#countdown').text('Koe on päättynyt, käytit aikaa ' + getExamLengthMessage() +'.');
@@ -89,7 +88,6 @@ function submitExam(event) {
     var answer = $("#examForm").find( "input[name='answer_" + i + "']"  ).val()
     var answerLogginTemplate = jQuery.validator.format("Answer for {0} * {1} : {2}, expected {3}");
     var failureTemplate = jQuery.validator.format("Väärin! Vastaus on {0}");
-    console.log(answerLogginTemplate(questions[i].firstNumber, questions[i].secondNumber, answer, questions[i].correctAnswer));
     if (answer == questions[i].correctAnswer) {
       correctCount++;
       $("#resultOk_" + i).append("<img id='correct' src='images/correct.jpg' alt='Oikein' />");
@@ -115,7 +113,6 @@ function submitExam(event) {
   window.localStorage.setItem('results', JSON.stringify(resultArr));
   resultArr = JSON.parse(window.localStorage.getItem('results'));
   var resultHistory = getResultHistory(resultArr);
-  console.log(resultHistory);
   $('#results').html(resultHistory);
   $('#results').show();
 }

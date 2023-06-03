@@ -5,7 +5,7 @@ function getExamStart() {
 }
 
 function getExamRowTemplate() {
-  return '<div class="form-group"><label for="answer_{0}">{1} * {2} = </label><input type="text" class="inputField" id="answer_{0}" name="answer_{0}" /><span id="resultOk_{0}"></span></div>';
+  return '<div class="form-group"><label for="answer_{0}">{1} * {2} = </label><input type="number" class="inputField" id="answer_{0}" name="answer_{0}" /><span id="resultOk_{0}"></span></div>';
 }
 
 function getExamEnd() {
